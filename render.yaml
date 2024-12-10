@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: chatwork-fastapi
+    env: python
+    runtime: python3
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 8000
+    envVars:
+      - key: OPENAI_API_KEY
+        value: "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"
+      - key: CHATWORK_API_TOKEN
+        value: "d884411846999c80c15e63bef1be44c3"
+      - key: CHATWORK_ROOM_ID
+        value: "379360519
