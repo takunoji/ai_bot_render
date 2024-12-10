@@ -12,14 +12,11 @@ load_dotenv()  # 環境変数をロード
 app = FastAPI()
 
 # OpenAI APIキー
-openai.api_key = os.getenv(
-    "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")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # チャットワークAPIキーとルームID
-CHATWORK_API_TOKEN = os.getenv(
-    "d884411846999c80c15e63bef1be44c3")
-CHATWORK_ROOM_ID = os.getenv("379360519")
-
+CHATWORK_API_TOKEN = os.getenv("CHATWORK_API_TOKEN")
+CHATWORK_ROOM_ID = os.getenv("CHATWORK_ROOM_ID")
 
 @app.get("/")
 async def root():
