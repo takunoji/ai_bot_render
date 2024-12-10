@@ -5,7 +5,8 @@ from youtube_transcript_api import YouTubeTranscriptApi
 import pandas as pd
 import requests
 from dotenv import load_dotenv
-
+import logging
+import uvicorn
 load_dotenv()  # 環境変数をロード
 
 app = FastAPI()
@@ -132,3 +133,5 @@ async def chatwork_webhook(request: Request):
     except Exception as e:
         raise HTTPException(
             status_code=500, detail=f"Error processing webhook: {e}")
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
