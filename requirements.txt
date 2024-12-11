@@ -5,5 +5,5 @@ pypdf2
 openai
 youtube_transcript_api
 pandas
-dotenv
+python-dotenv
 logging
